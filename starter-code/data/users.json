@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "5c8a1d5b0190b214360dc057",
+    "firstName": "Daniel",
+    "lastName": "Kuznetsov",
+    "role": "user",
+    "email": "daniel@example.com",
+    "password": "test1234",
+    "photo": "default.jpeg",
+    "bookmarked": ["id1movie", "id2movie", "id3movie"],
+    "liked": ["id1movie", "id2movie", "id3movie"],
+    "active": true
+  },
+  {
+    "_id": "5c8a1dfa2f8fb814b56fa181",
+    "firstName": "Lourdes",
+    "lastName": "Browning",
+    "role": "user",
+    "email": "loulou@example.com",
+    "password": "test1234",
+    "photo": "default.jpeg",
+    "bookmarked": ["id1movie", "id2movie", "id3movie"],
+    "liked": ["id1movie", "id2movie", "id3movie"],
+    "active": true
+  },
+  {
+    "_id": "5c8a1e1a2f8fb814b56fa182",
+    "firstName": "Sophie",
+    "lastName": "Hart",
+    "role": "user",
+    "email": "sophie@example.com",
+    "password": "test1234",
+    "photo": "default.jpeg",
+    "bookmarked": ["id1movie", "id2movie", "id3movie"],
+    "liked": ["id1movie", "id2movie", "id3movie"],
+    "active": true
+  },
+  {
+    "_id": "5c8a1e1a2f8fb814b56fa183",
+    "firstName": "Ayla",
+    "lastName": "Cornell",
+    "role": "user",
+    "email": "ayls@example.com",
+    "password": "test1234",
+    "photo": "default.jpeg",
+    "bookmarked": ["id1movie", "id2movie", "id3movie"],
+    "liked": ["id1movie", "id2movie", "id3movie"],
+    "active": true
+  }
+]
