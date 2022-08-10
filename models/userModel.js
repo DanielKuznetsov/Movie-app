@@ -33,18 +33,18 @@ const userSchema = new mongoose.Schema(
       message: "Passwords do not match!",
     },
     photo: String,
-    bookmarked: [
-      {
-        type: mongooseSchema.ObjectId,
-        ref: "Movie",
-      },
-    ],
-    liked: [
-      {
-        type: mongooseSchema.ObjectId,
-        ref: "Movie",
-      },
-    ],
+    // bookmarked: [
+    //   {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: "Movie",
+    //   },
+    // ],
+    // liked: [
+    //   {
+    //     type: mongoose.Types.Schema.ObjectId,
+    //     ref: "Movie",
+    //   },
+    // ],
     active: Boolean,
   },
   {

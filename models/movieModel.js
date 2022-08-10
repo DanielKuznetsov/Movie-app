@@ -17,18 +17,18 @@ const movieSchema = new mongoose.Schema(
     year: Number,
     category: String,
     rating: String,
-    whoBookmarked: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-      },
-    ],
-    whoLiked: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-      },
-    ],
+    // whoBookmarked: [
+    //   {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: "User",
+    //   },
+    // ],
+    // whoBookmarked: [
+    //   {
+    //     type: mongoose.Schema.ObjectId,
+    //     ref: "User",
+    //   },
+    // ],
     isTrending: Boolean,
   },
   {

@@ -7,8 +7,6 @@
     "email": "daniel@example.com",
     "password": "test1234",
     "photo": "default.jpeg",
-    "bookmarked": ["id1movie", "id2movie", "id3movie"],
-    "liked": ["id1movie", "id2movie", "id3movie"],
     "active": true
   },
   {
@@ -19,8 +17,6 @@
     "email": "loulou@example.com",
     "password": "test1234",
     "photo": "default.jpeg",
-    "bookmarked": ["id1movie", "id2movie", "id3movie"],
-    "liked": ["id1movie", "id2movie", "id3movie"],
     "active": true
   },
   {
@@ -31,8 +27,6 @@
     "email": "sophie@example.com",
     "password": "test1234",
     "photo": "default.jpeg",
-    "bookmarked": ["id1movie", "id2movie", "id3movie"],
-    "liked": ["id1movie", "id2movie", "id3movie"],
     "active": true
   },
   {
@@ -43,8 +37,6 @@
     "email": "ayls@example.com",
     "password": "test1234",
     "photo": "default.jpeg",
-    "bookmarked": ["id1movie", "id2movie", "id3movie"],
-    "liked": ["id1movie", "id2movie", "id3movie"],
     "active": true
   }
 ]

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv"); // !
 const fs = require("fs");
 
-const Movie = require("../../models/moviesModel");
+const Movie = require("../../models/movieModel");
 const User = require("../../models/userModel");
 
 dotenv.config({ path: "./config.env" });
@@ -23,7 +23,7 @@ const users = JSON.parse(fs.readFileSync(`${__dirname}/users.json`, "utf-8"));
 const importData = async () => {
   try {
     await Movie.create(movies);
-    await User.create(users);
+    await User.create(users, { validateBeforeSave: false });
     console.log("Data successfully loaded");
     process.exit();
   } catch (err) {

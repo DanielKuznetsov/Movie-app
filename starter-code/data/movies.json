@@ -15,8 +15,6 @@
     "year": 2019,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": true
   },
   {
@@ -35,8 +33,6 @@
     "year": 2021,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": true
   },
   {
@@ -55,8 +51,6 @@
     "year": 2019,
     "category": "TV Series",
     "rating": "E",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": true
   },
   {
@@ -75,7 +69,6 @@
     "year": 2021,
     "category": "Movie",
     "rating": "18+",
-    "isBookmarked": false,
     "isTrending": true
   },
   {
@@ -94,8 +87,6 @@
     "year": 2018,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": true
   },
   {
@@ -110,8 +101,6 @@
     "year": 2019,
     "category": "Movie",
     "rating": "E",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -126,8 +115,6 @@
     "year": 2019,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -142,9 +129,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "18+",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
-
     "isTrending": false
   },
   {
@@ -159,9 +143,6 @@
     "year": 2019,
     "category": "Movie",
     "rating": "E",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
-
     "isTrending": false
   },
   {
@@ -176,8 +157,6 @@
     "year": 2016,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -192,8 +171,6 @@
     "year": 2016,
     "category": "TV Series",
     "rating": "18+",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -208,8 +185,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "E",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -224,8 +199,6 @@
     "year": 2016,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -240,8 +213,6 @@
     "year": 2015,
     "category": "TV Series",
     "rating": "E",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -256,8 +227,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -272,8 +241,6 @@
     "year": 2018,
     "category": "TV Series",
     "rating": "18+",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -288,8 +255,6 @@
     "year": 2015,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -304,8 +269,6 @@
     "year": 2021,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -320,8 +283,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "18+",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -336,8 +297,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "E",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -352,8 +311,6 @@
     "year": 2013,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -368,8 +325,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "E",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -384,8 +339,6 @@
     "year": 2018,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -400,8 +353,6 @@
     "year": 2016,
     "category": "TV Series",
     "rating": "E",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -416,8 +367,6 @@
     "year": 2020,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -432,8 +381,6 @@
     "year": 2016,
     "category": "TV Series",
     "rating": "PG",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -448,8 +395,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "18+",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -464,8 +409,6 @@
     "year": 2018,
     "category": "TV Series",
     "rating": "18+",
-    "isBookmarked": false,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   },
   {
@@ -480,8 +423,6 @@
     "year": 2017,
     "category": "Movie",
     "rating": "PG",
-    "isBookmarked": true,
-    "whoBookmarked": ["userID1", "userID2", "userID3"],
     "isTrending": false
   }
 ]
