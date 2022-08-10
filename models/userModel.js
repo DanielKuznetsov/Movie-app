@@ -1,16 +1,50 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const userSchema = new mongoose.Schema(
   {
-    _id: String,
-    firstName: String,
-    lastName: String,
-    role: String,
-    email: String,
-    password: String,
+    firstName: {
+      type: String,
+      required: [true, "Please provide your first name!"],
+    },
+    lastName: {
+      type: String,
+      required: [true, "Please provide your last name!"],
+    },
+    email: {
+      type: String,
+      required: [true, "Please provide your email!"],
+      unique: true,
+      lowercase: true,
+      validate: [validator.isEmail, "Please provide a valid email!"],
+    },
+    password: {
+      type: String,
+      required: [true, "Please provide your password!"],
+      minlength: 8,
+      select: false,
+    },
+    passwordConfirm: {
+      type: String,
+      required: [true, "Please provide your password!"],
+      validate: function (el) {
+        return el === this.password;
+      },
+      message: "Passwords do not match!",
+    },
     photo: String,
-    bookmarked: [String],
-    liked: [String],
+    bookmarked: [
+      {
+        type: mongooseSchema.ObjectId,
+        ref: "Movie",
+      },
+    ],
+    liked: [
+      {
+        type: mongooseSchema.ObjectId,
+        ref: "Movie",
+      },
+    ],
     active: Boolean,
   },
   {
