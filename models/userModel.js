@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema(
   {
@@ -32,7 +33,10 @@ const userSchema = new mongoose.Schema(
       },
       message: "Passwords do not match!",
     },
-    photo: String,
+    photo: {
+      type: String,
+      default: "default.jpeg",
+    },
     // bookmarked: [
     //   {
     //     type: mongoose.Schema.ObjectId,
@@ -52,6 +56,20 @@ const userSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+
+userSchema.pre("save", async function (req, res, next) {
+  this.password = await bcrypt.hash(this.password, 12);
+  this.passwordConfirm = undefined;
+
+  next();
+});
+
+userSchema.methods.comparePasswords = async function (
+  candidatePassword,
+  userPassword
+) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
 
 const User = mongoose.model("User", userSchema);
 
