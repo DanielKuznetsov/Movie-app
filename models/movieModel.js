@@ -1,41 +1,35 @@
 const mongoose = require("mongoose");
 
-const movieSchema = new mongoose.Schema(
-  {
-    title: String,
-    thumbnail: {
-      trending: {
-        small: String,
-        large: String,
-      },
-      regular: {
-        small: String,
-        medium: String,
-        large: String,
-      },
+const movieSchema = new mongoose.Schema({
+  title: String,
+  thumbnail: {
+    trending: {
+      small: String,
+      large: String,
     },
-    year: Number,
-    category: String,
-    rating: String,
-    whoBookmarked: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-      },
-    ],
-    whoLiked: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: "User",
-      },
-    ],
-    isTrending: Boolean,
+    regular: {
+      small: String,
+      medium: String,
+      large: String,
+    },
   },
-  {
-    toJSON: { virtuals: true },
-    toObject: { virtuals: true },
-  }
-);
+  year: Number,
+  category: String,
+  rating: String,
+  whoBookmarked: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
+  ],
+  whoLiked: [
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+    },
+  ],
+  isTrending: Boolean,
+});
 
 const Movie = mongoose.model("Movie", movieSchema);
 

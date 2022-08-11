@@ -101,6 +101,41 @@ exports.likeMovie = async function (req, res, next) {
   });
 };
 
-// Will be done after user authentication/authorization is done
-exports.getBookmarked = async (req, res, next) => {};
-exports.getLikedMovies = async (req, res, next) => {};
+exports.bookmarkMovie = async function (req, res, next) {
+  const movie = await Movie.findByIdAndUpdate(req.params.id, {
+    $push: { whoBookmarked: req.user.id },
+  });
+
+  const user = await User.findByIdAndUpdate(req.user.id, {
+    $push: { bookmarked: req.params.id },
+  });
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: movie,
+    },
+  });
+};
+
+exports.getBookmarked = function (req, res, next) {
+  const bookmarkedMovies = req.user.bookmarked;
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: bookmarkedMovies,
+    },
+  });
+};
+
+exports.getLiked = (req, res, next) => {
+  const likedMovies = req.user.liked;
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: likedMovies,
+    },
+  });
+};

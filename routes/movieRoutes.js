@@ -5,6 +5,12 @@ const authController = require("../controllers/authController");
 const router = express.Router();
 
 router.route("/").get(movieController.getAllMovies);
+router
+  .route("/bookmarked")
+  .get(authController.protect, movieController.getBookmarked);
+router
+  .route("/likedMovies")
+  .get(authController.protect, movieController.getLiked);
 router.route("/tvSeries").get(movieController.getAllTVSeries);
 router.get("/trending", movieController.getTrending);
 
@@ -15,7 +21,8 @@ router
   .route("/like/:id")
   .post(authController.protect, movieController.likeMovie);
 
-// router.get("/bookmarked", movieController.getBookmarked);
-// router.get("/likedMovies", movieController.getLikedMovies);
+router
+  .route("/bookmark/:id")
+  .post(authController.protect, movieController.bookmarkMovie);
 
 module.exports = router;
