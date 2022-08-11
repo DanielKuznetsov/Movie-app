@@ -85,29 +85,57 @@ exports.getTrending = async (req, res, next) => {
 };
 
 exports.likeMovie = async function (req, res, next) {
-  const movie = await Movie.findByIdAndUpdate(req.params.id, {
-    $push: { whoLiked: req.user.id },
+  const isInArray = req.user.liked.some((movie) => {
+    return movie.equals(req.params.id);
   });
 
-  const user = await User.findByIdAndUpdate(req.user.id, {
-    $push: { liked: req.params.id },
-  });
+  if (!isInArray) {
+    const movie = await Movie.findByIdAndUpdate(req.params.id, {
+      $addToSet: { whoLiked: req.user.id },
+    });
 
-  res.status(200).json({
-    status: "success",
-    data: {
-      data: movie,
-    },
-  });
+    const user = await User.findByIdAndUpdate(req.user.id, {
+      $addToSet: { liked: req.params.id },
+    });
+
+    res.status(200).json({
+      status: "success!",
+      data: {
+        data: movie,
+      },
+    });
+  }
+
+  if (isInArray) {
+    req.user.liked.some((movie, i) => {
+      if (movie.equals(req.params.id)) return (index = i);
+    });
+
+    await User.findOneAndUpdate(
+      { _id: req.user.id },
+      { $pull: { liked: req.params.id } }
+    );
+
+    await Movie.findOneAndUpdate(
+      {
+        _id: req.params.id,
+      },
+      { $pull: { whoLiked: req.user.id } }
+    );
+
+    res.status(200).json({
+      status: "success",
+    });
+  }
 };
 
 exports.bookmarkMovie = async function (req, res, next) {
   const movie = await Movie.findByIdAndUpdate(req.params.id, {
-    $push: { whoBookmarked: req.user.id },
+    $addToSet: { whoBookmarked: req.user.id },
   });
 
   const user = await User.findByIdAndUpdate(req.user.id, {
-    $push: { bookmarked: req.params.id },
+    $addToSet: { bookmarked: req.params.id },
   });
 
   res.status(200).json({
