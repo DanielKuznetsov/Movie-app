@@ -37,18 +37,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "default.jpeg",
     },
-    // bookmarked: [
-    //   {
-    //     type: mongoose.Schema.ObjectId,
-    //     ref: "Movie",
-    //   },
-    // ],
-    // liked: [
-    //   {
-    //     type: mongoose.Types.Schema.ObjectId,
-    //     ref: "Movie",
-    //   },
-    // ],
+    bookmarked: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Movie",
+      },
+    ],
+    liked: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: "Movie",
+      },
+    ],
     active: Boolean,
   },
   {
