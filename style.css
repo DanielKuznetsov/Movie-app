@@ -27,6 +27,85 @@ body {
   width: 4rem;
   height: 4rem; }
 
+.content-title {
+  font-weight: 200;
+  margin-bottom: 2.5rem;
+  margin-top: 1.5rem; }
+
+.bookmark-btn {
+  position: absolute;
+  top: 1.75rem;
+  right: 2.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .bookmark-btn > * {
+    transform: rotate(2deg); }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .overlay .play-btn {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 8.5rem;
+    padding: 0.75rem 0;
+    border-radius: 2rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.25);
+    transition: all 0.5s; }
+    .overlay .play-btn img {
+      width: 2.35rem;
+      height: 2.35rem; }
+    .overlay .play-btn span {
+      font-weight: 600;
+      font-size: 1.4rem; }
+
+.info,
+.span-category {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; }
+
+.year,
+.category,
+.rating {
+  font-weight: 200;
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.7); }
+
+.dot {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7); }
+
+.movie-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  z-index: 100;
+  color: white; }
+
 /*
 ================================================
             SIGN IN/SIGN UP CLASSES
@@ -86,7 +165,7 @@ body {
 
 /*
 ================================================
-                    HOME PAGE
+          HOME PAGE NAVIGATION/SEARCH
 ================================================
 */
 .container-home {
@@ -95,13 +174,16 @@ body {
   padding: 2.75rem 2.2rem;
   display: flex;
   gap: 2.5rem; }
+  .container-home .content-wrapper {
+    flex: 1; }
 
 .home__nav {
   height: 50rem;
   padding: 2rem 0;
   background-color: #161d2f;
   border-radius: 1rem;
-  flex-basis: 7rem;
+  flex-basis: 7%;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,17 +214,17 @@ body {
   height: 3.4rem; }
 
 .search {
-  width: 50rem;
   height: 5rem;
   display: flex;
+  gap: 2rem;
   align-items: center;
-  flex-basis: 50%; }
+  flex-basis: 90%; }
   .search__logo {
     cursor: pointer;
     background-color: transparent;
     border: none;
     outline: none; }
-    .search__logo img {
+    .search__logo > * {
       width: 2.75rem;
       height: 2.75rem; }
   .search__input {
@@ -150,10 +232,54 @@ body {
     background-color: transparent;
     outline: none;
     border: none;
+    padding: 1.5rem 0;
     color: #fff;
     font-weight: 200;
-    padding: 1.5rem;
     font-size: 1.8rem;
-    cursor: pointer; }
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s; }
+    .search__input:active, .search__input:focus {
+      border-bottom: 1px solid #5a698f; }
+
+/*
+================================================
+              TRENDING MOVIE CARD
+================================================
+*/
+.trending__cards-wrapper {
+  overflow: scroll;
+  display: flex;
+  gap: 2.5rem; }
+.trending .card {
+  position: relative;
+  width: 35rem;
+  height: 20rem;
+  background-color: #5a698f;
+  border-radius: 0.75rem; }
+  .trending .card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.4); }
+    .trending .card:hover .overlay .play-btn {
+      opacity: 1;
+      pointer-events: all; }
+  .trending .card__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; }
+  .trending .card__info {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.75rem;
+    z-index: 10; }
+
+/*
+================================================
+                  MOVIE CARD
+================================================
+*/
 
 /*# sourceMappingURL=style.css.map */

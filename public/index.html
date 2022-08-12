@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="/style.css"></link>
     <link rel="shortcut icon" type="image/png" href="/starter-code/assets/favicon-32x32.png" />
     
-    <title>Home Page</title>
+    <!-- ICON USAGE -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <title>Movie App | Home Page</title>
   </head>
   <body>
     <div class="container-home">
@@ -44,12 +49,48 @@
         <span class="home__nav-span"><img class="home__nav-avatar" src="/starter-code/assets/image-avatar.png" alt="Profile photo"></span>
       </nav>
 
-      <form class="search">
-        <button class="search__logo"><img src="/starter-code/assets/icon-search.svg" alt="Search logo"></button>
-        <input class="search__input" type="search" name="searh" id="movie-seach" placeholder="Search for movies or TV series">
-      </form>
-      
-      <main class="home__content"></main>
+      <div class="content-wrapper">
+
+        <form class="search">
+          <button class="search__logo"><img src="/starter-code/assets/icon-search.svg" alt="Search icon"></button>
+          <input class="search__input" type="search" name="search" id="movie-seach" placeholder="Search for movies or TV series">
+        </form>
+
+        <main class="trending">
+          <h1 class="content-title">Trending</h1>
+
+          <div class="trending__cards-wrapper">
+            <div class="card">
+              <div class="overlay">
+                <!-- IF SOMEONE WANTS TO MAKE IT WORKABLE, THEN IT NEEDS TO BE CONVERTED INTO A BUTTON TAG -->
+                <div class="play-btn">
+                  <img src="/starter-code/assets/icon-play.svg" alt="Overlay play icon">
+                  <span>Play</span>
+                </div>
+              </div>
+
+              <img class="card__image" src="/starter-code/assets/thumbnails/beyond-earth/trending/large.jpg" alt="">
+              
+              <!-- WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS -->
+              <button class="bookmark-btn"><svg width="12" height="14" xmlns="http://www.w3.org/2000/svg"><path d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z" stroke="#FFF" stroke-width="1.5" fill="none"/></svg></button>
+
+              <div class="card__info">
+                <div class="info">
+                  <span class="year">2019</span>
+                  <span class="dot">&#8226;</span>
+                  <span class="span-category">
+                    <svg class="icon" width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M10.173 0H1.827A1.827 1.827 0 0 0 0 1.827v8.346C0 11.183.818 12 1.827 12h8.346A1.827 1.827 0 0 0 12 10.173V1.827A1.827 1.827 0 0 0 10.173 0ZM2.4 5.4H1.2V4.2h1.2v1.2ZM1.2 6.6h1.2v1.2H1.2V6.6Zm9.6-1.2H9.6V4.2h1.2v1.2ZM9.6 6.6h1.2v1.2H9.6V6.6Zm1.2-4.956V2.4H9.6V1.2h.756a.444.444 0 0 1 .444.444ZM1.644 1.2H2.4v1.2H1.2v-.756a.444.444 0 0 1 .444-.444ZM1.2 10.356V9.6h1.2v1.2h-.756a.444.444 0 0 1-.444-.444Zm9.6 0a.444.444 0 0 1-.444.444H9.6V9.6h1.2v.756Z" fill="#FFF" opacity=".75"/></svg>
+                    <span class="category">Movie</span>
+                  </span>
+                  <span class="dot">&#8226;</span>
+                  <span class="rating">PG</span>
+                </div>
+                <span class="movie-title">Beyond Earth</span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   </body>
 </html>
