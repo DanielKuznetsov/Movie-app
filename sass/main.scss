@@ -36,8 +36,8 @@ body {
 */
 
 .logo {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 /*
@@ -116,5 +116,69 @@ body {
     text-decoration: none;
     color: $color-red;
     border-bottom: 1px dashed $color-red;
+  }
+}
+
+/*
+================================================
+                    HOME PAGE
+================================================
+*/
+
+.container-home {
+  max-width: 100%;
+  height: 100%;
+  padding: 2.75rem 2.2rem;
+}
+
+.home {
+  &__nav {
+    width: 7rem;
+    height: 50rem;
+    padding: 2rem 0;
+    background-color: $color-navy;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__nav-item {
+    .logo {
+      width: 3.5rem;
+      height: 3.5rem;
+
+      margin-bottom: 2.25rem;
+    }
+
+    .nav--icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__nav-span {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+  }
+
+  &__nav-avatar {
+    width: 3.4rem;
+    height: 3.4rem;
   }
 }
