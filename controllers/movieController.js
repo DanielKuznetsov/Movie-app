@@ -91,6 +91,7 @@ exports.likeMovie = async function (req, res, next) {
 
   if (!isInArray) {
     const movie = await Movie.findByIdAndUpdate(req.params.id, {
+      // 'addToSet' means it won't add any more than ust 1 item with same ID
       $addToSet: { whoLiked: req.user.id },
     });
 
@@ -107,8 +108,8 @@ exports.likeMovie = async function (req, res, next) {
   }
 
   if (isInArray) {
-    req.user.liked.some((movie, i) => {
-      if (movie.equals(req.params.id)) return (index = i);
+    req.user.liked.some((movie) => {
+      if (movie.equals(req.params.id)) return;
     });
 
     await User.findOneAndUpdate(

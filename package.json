@@ -4,7 +4,6 @@
   "description": "Movie App Project! (practice)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "npx nodemon server.js"
   },
   "repository": {
@@ -27,6 +26,7 @@
     "mongoose": "^6.5.2",
     "node": "^18.7.0",
     "nodemon": "^2.0.19",
+    "sass": "^1.54.4",
     "util": "^0.12.4",
     "validator": "^13.7.0"
   }
