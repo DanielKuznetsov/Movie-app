@@ -4,10 +4,12 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   font-family: "Jost", sans-serif;
@@ -16,7 +18,8 @@ body {
   color: #fff;
   font-weight: 300;
   font-size: 1.6rem;
-  line-height: 1.5; }
+  line-height: 1.5;
+}
 
 /*
 ================================================
@@ -25,12 +28,14 @@ body {
 */
 .logo {
   width: 4rem;
-  height: 4rem; }
+  height: 4rem;
+}
 
 .content-title {
   font-weight: 200;
   margin-bottom: 2.5rem;
-  margin-top: 1.5rem; }
+  margin-top: 1.5rem;
+}
 
 .bookmark-btn {
   position: absolute;
@@ -46,9 +51,11 @@ body {
   z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center; }
-  .bookmark-btn > * {
-    transform: rotate(2deg); }
+  justify-content: center;
+}
+.bookmark-btn > * {
+  transform: rotate(2deg);
+}
 
 .overlay {
   position: absolute;
@@ -62,49 +69,57 @@ body {
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  justify-content: center; }
-  .overlay .play-btn {
-    display: flex;
-    opacity: 0;
-    pointer-events: none;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    width: 8.5rem;
-    padding: 0.75rem 0;
-    border-radius: 2rem;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.25);
-    transition: all 0.5s; }
-    .overlay .play-btn img {
-      width: 2.35rem;
-      height: 2.35rem; }
-    .overlay .play-btn span {
-      font-weight: 600;
-      font-size: 1.4rem; }
+  justify-content: center;
+}
+.overlay .play-btn {
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 8.5rem;
+  padding: 0.75rem 0;
+  border-radius: 2rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.25);
+  transition: all 0.5s;
+}
+.overlay .play-btn img {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+.overlay .play-btn span {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
 
 .info,
 .span-category {
   display: flex;
   align-items: center;
-  gap: 0.5rem; }
+  gap: 0.5rem;
+}
 
 .year,
 .category,
 .rating {
   font-weight: 200;
   font-size: 1.3rem;
-  color: rgba(255, 255, 255, 0.7); }
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .dot {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7); }
+  color: rgba(255, 255, 255, 0.7);
+}
 
 .movie-title {
   font-weight: 600;
   font-size: 1.8rem;
   z-index: 100;
-  color: white; }
+  color: white;
+}
 
 /*
 ================================================
@@ -118,7 +133,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10rem;
-  margin-top: 15rem; }
+  margin-top: 15rem;
+}
 
 .form {
   background-color: #fff;
@@ -128,40 +144,48 @@ body {
   background-color: #161d2f;
   display: flex;
   gap: 0.75rem;
-  flex-direction: column; }
-  .form__title {
-    font-size: 2.4rem; }
-  .form__input {
-    display: block;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 1rem;
-    color: #fff;
-    font-family: inherit;
-    border: none;
-    outline: none;
-    background: transparent;
-    border-bottom: 1px solid #fff; }
-    .form__input:first-of-type {
-      margin-top: 2rem; }
-    .form__input::placeholder {
-      font-weight: 200; }
-  .form__submit {
-    margin-top: 3rem;
-    width: 100%;
-    padding: 1.25rem;
-    cursor: pointer; }
-  .form__footer {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 0.5rem;
-    font-weight: 300;
-    letter-spacing: 0.25px; }
-  .form__link {
-    margin-left: 0.5rem;
-    text-decoration: none;
-    color: #fc4747;
-    border-bottom: 1px dashed #fc4747; }
+  flex-direction: column;
+}
+.form__title {
+  font-size: 2.4rem;
+}
+.form__input {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+}
+.form__input:first-of-type {
+  margin-top: 2rem;
+}
+.form__input::placeholder {
+  font-weight: 200;
+}
+.form__submit {
+  margin-top: 3rem;
+  width: 100%;
+  padding: 1.25rem;
+  cursor: pointer;
+}
+.form__footer {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-weight: 300;
+  letter-spacing: 0.25px;
+}
+.form__link {
+  margin-left: 0.5rem;
+  text-decoration: none;
+  color: #fc4747;
+  border-bottom: 1px dashed #fc4747;
+}
 
 /*
 ================================================
@@ -173,9 +197,11 @@ body {
   height: 100%;
   padding: 2.75rem 2.2rem;
   display: flex;
-  gap: 2.5rem; }
-  .container-home .content-wrapper {
-    flex: 1; }
+  gap: 2.5rem;
+}
+.container-home .content-wrapper {
+  flex: 1;
+}
 
 .home__nav {
   height: 50rem;
@@ -187,20 +213,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 .home__nav-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem; }
+  gap: 1.5rem;
+}
 .home__nav-item .logo {
   width: 3.5rem;
   height: 3.5rem;
-  margin-bottom: 2.25rem; }
+  margin-bottom: 2.25rem;
+}
 .home__nav-item .nav--icon {
   width: 2.5rem;
-  height: 2.5rem; }
+  height: 2.5rem;
+}
 .home__nav-span {
   width: 3.5rem;
   height: 3.5rem;
@@ -208,39 +238,47 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 2px solid #fff; }
+  border: 2px solid #fff;
+}
 .home__nav-avatar {
   width: 3.4rem;
-  height: 3.4rem; }
+  height: 3.4rem;
+}
 
 .search {
   height: 5rem;
   display: flex;
   gap: 2rem;
   align-items: center;
-  flex-basis: 96%; }
-  .search__logo {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    outline: none; }
-    .search__logo > * {
-      width: 2.75rem;
-      height: 2.75rem; }
-  .search__input {
-    width: 100%;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    padding: 1.5rem 0;
-    color: #fff;
-    font-weight: 200;
-    font-size: 1.8rem;
-    cursor: pointer;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s; }
-    .search__input:active, .search__input:focus {
-      border-bottom: 1px solid #5a698f; }
+  flex-basis: 96%;
+}
+.search__logo {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.search__logo > * {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+.search__input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 1.5rem 0;
+  color: #fff;
+  font-weight: 200;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+.search__input:active,
+.search__input:focus {
+  border-bottom: 1px solid #5a698f;
+}
 
 /*
 ================================================
@@ -250,64 +288,76 @@ body {
 .trending__cards-wrapper {
   overflow: scroll;
   display: flex;
-  gap: 2.5rem; }
+  gap: 2.5rem;
+}
 .trending .card {
   position: relative;
   width: 35rem;
   height: 17rem;
   background-color: #5a698f;
-  border-radius: 0.75rem; }
-  .trending .card:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.4); }
-    .trending .card:hover .overlay .play-btn {
-      opacity: 1;
-      pointer-events: all; }
-  .trending .card__image {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.75rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0; }
-  .trending .card__info {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 1.75rem;
-    z-index: 10; }
+  border-radius: 0.75rem;
+}
+.trending .card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.trending .card:hover .overlay .play-btn {
+  opacity: 1;
+  pointer-events: all;
+}
+.trending .card__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.trending .card__info {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.75rem;
+  z-index: 10;
+}
 
 /*
 ================================================
-                  MOVIE CARD
+              GENERAL MOVIE CARD
 ================================================
 */
 .general .cards-wrapper {
   display: flex;
   gap: 2.5rem;
-  flex-wrap: wrap; }
-  .general .cards-wrapper .card {
-    position: relative;
-    margin-bottom: 7rem;
-    width: 25rem;
-    height: 14.5rem;
-    border-radius: 0.75rem; }
-    .general .cards-wrapper .card:hover .overlay {
-      background-color: rgba(0, 0, 0, 0.4); }
-      .general .cards-wrapper .card:hover .overlay .play-btn {
-        opacity: 1;
-        pointer-events: all; }
-    .general .cards-wrapper .card__image {
-      width: 100%;
-      height: 100%;
-      border-radius: 0.75rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0; }
-    .general .cards-wrapper .card__info {
-      position: absolute;
-      bottom: -5.25rem;
-      left: 0;
-      z-index: 10; }
+  flex-wrap: wrap;
+}
+.general .cards-wrapper .card {
+  position: relative;
+  margin-bottom: 7rem;
+  width: 25rem;
+  height: 14.5rem;
+  border-radius: 0.75rem;
+}
+.general .cards-wrapper .card:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.general .cards-wrapper .card:hover .overlay .play-btn {
+  opacity: 1;
+  pointer-events: all;
+}
+.general .cards-wrapper .card__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+.general .cards-wrapper .card__info {
+  position: absolute;
+  bottom: -5.25rem;
+  left: 0;
+  z-index: 10;
+}
 
 /*# sourceMappingURL=style.css.map */

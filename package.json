@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/DanilKuznet1/Movie-app#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.1",
@@ -26,8 +27,12 @@
     "mongoose": "^6.5.2",
     "node": "^18.7.0",
     "nodemon": "^2.0.19",
+    "pug": "^3.0.2",
     "sass": "^1.54.4",
     "util": "^0.12.4",
     "validator": "^13.7.0"
+  },
+  "engines": {
+    "node": ">= 10.0.0"
   }
 }

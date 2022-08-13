@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    //- meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='shortcut icon', type='image/png', href='/starter-code/assets/favicon-32x32.png')
+    // ICON USAGE
+    script(type='module', src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js')
+    script(nomodule='', src='https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js')
+    script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
+
+    title Movie App | Home Page
+  body
+    .container-home
+      include _navbar
+
+      .content-wrapper
+        include _search
+
+        block content
+          h1 THIS IS A PLACEHOLDER
+
+
+    //- script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
