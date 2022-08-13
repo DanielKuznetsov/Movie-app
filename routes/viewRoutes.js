@@ -6,3 +6,4 @@ const router = express.Router();
 router.get("/", viewController.getHomepage);
 
 module.exports = router;
+

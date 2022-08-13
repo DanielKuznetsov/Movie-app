@@ -1,0 +1,28 @@
+html
+  head
+  body
+    main.trending
+      h1.content-title Trending
+      .trending__cards-wrapper
+        .card
+          .overlay
+            // IF SOMEONE WANTS TO MAKE IT WORKABLE, THEN IT NEEDS TO BE CONVERTED INTO A BUTTON TAG
+            .play-btn
+              img(src='/starter-code/assets/icon-play.svg', alt='Overlay play icon')
+              span Play
+          img.card__image(src='/starter-code/assets/thumbnails/beyond-earth/trending/large.jpg', alt='')
+          // WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS
+          button.bookmark-btn
+            svg(width='12', height='14', xmlns='http://www.w3.org/2000/svg')
+              path(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='none')
+          .card__info
+            .info
+              span.year 2019
+              span.dot &bull;
+              span.span-category
+                svg.icon(width='12', height='12', xmlns='http://www.w3.org/2000/svg')
+                  path(d='M10.173 0H1.827A1.827 1.827 0 0 0 0 1.827v8.346C0 11.183.818 12 1.827 12h8.346A1.827 1.827 0 0 0 12 10.173V1.827A1.827 1.827 0 0 0 10.173 0ZM2.4 5.4H1.2V4.2h1.2v1.2ZM1.2 6.6h1.2v1.2H1.2V6.6Zm9.6-1.2H9.6V4.2h1.2v1.2ZM9.6 6.6h1.2v1.2H9.6V6.6Zm1.2-4.956V2.4H9.6V1.2h.756a.444.444 0 0 1 .444.444ZM1.644 1.2H2.4v1.2H1.2v-.756a.444.444 0 0 1 .444-.444ZM1.2 10.356V9.6h1.2v1.2h-.756a.444.444 0 0 1-.444-.444Zm9.6 0a.444.444 0 0 1-.444.444H9.6V9.6h1.2v.756Z', fill='#FFF', opacity='.75')
+                span.category Movie
+              span.dot &bull;
+              span.rating PG
+            span.movie-title Beyond Earth

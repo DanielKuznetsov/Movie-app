@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/style.css')
+    link(rel='shortcut icon', type='image/png', href='/starter-code/assets/favicon-32x32.png')
+    title Movie App | Sign up
+  body
+    .container-log
+      img.logo(src='/starter-code/assets/logo.svg', alt='Logo')
+      .form
+        form#form.form__wrapper
+          span.form__title Sign up
+          input#email.form__input(type='text', placeholder='example@gmail.com')
+          input#password.form__input(type='password', placeholder='Password')
+          input#passwordConfirm.form__input(type='password', placeholder='Repeat  password')
+          button#form-btn.form__submit Create an account
+        span.form__footer
+          | Already have an account? 
+          a.form__link(href='#') Login

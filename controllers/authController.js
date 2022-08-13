@@ -108,3 +108,33 @@ exports.logout = (req, res) => {
 
   res.status(200).json({ status: "success" });
 };
+
+exports.isLoggedIn = async (req, res, next) => {
+  if (req.cookies.jwt) {
+    try {
+      token = req.cookies.jwt;
+
+      // 2) Verification the token
+      const decoded = await promisify(jwt.verify)(
+        req.cookies.jwt,
+        process.env.JWT_SECRET
+      );
+      // console.log(decoded);
+
+      // 3) Check if user is still exists
+      const freshUser = await User.findById(decoded.id);
+      if (!freshUser) {
+        return next();
+      }
+
+      // THERE IS A LOGGED IN USER
+      res.locals.user = freshUser; // this will allow that each PUG template will have access to this variable
+      req.user = freshUser;
+      return next();
+    } catch (err) {
+      return next();
+    }
+  }
+
+  next();
+};
