@@ -4585,7 +4585,9 @@ var login = /*#__PURE__*/function () {
             result = _context.sent;
 
             if (result.data.status === "success") {
-              console.log("SUCCESS");
+              console.log("SUCCESS"); // After successful login, the app redirects me to the /overview route-page
+
+              window.location.href = "http://localhost:4000/";
             }
 
             _context.next = 10;

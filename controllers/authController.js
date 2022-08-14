@@ -17,11 +17,11 @@ const createSendToken = (user, statusCode, res) => {
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000 // converting to milliseconds
     ),
     // secure: true, // to ensure that the cookie will be sent on an excrypted connection
-    httpOnly: true, // to ensure the cookie won't be modified or access by the browser
+    // httpOnly: true, // to ensure the cookie won't be modified or access by the browser
   };
 
   // Stroring token in http cookie
-  cookieOptions.secure = true;
+  // cookieOptions.secure = true;
 
   res.cookie("jwt", token, cookieOptions);
 
@@ -134,6 +134,8 @@ exports.isLoggedIn = async (req, res, next) => {
       // 3) Check if user is still exists
       const freshUser = await User.findById(decoded.id);
       if (!freshUser) {
+        res.status(404).render("login");
+
         return next();
       }
 
@@ -143,7 +145,7 @@ exports.isLoggedIn = async (req, res, next) => {
 
       return next();
     } catch (err) {
-      return next();
+      return next(new AppError("There is not logged in user.", 400));
     }
   }
 
