@@ -4,6 +4,8 @@ const path = require("path");
 const viewRouter = require("./routes/viewRoutes");
 const movieRouter = require("./routes/movieRoutes");
 const userRouter = require("./routes/userRoutes");
+const AppError = require("./utilities/appError");
+const globalErrorHandler = require("./controllers/errorController");
 
 const app = express();
 
@@ -19,5 +21,13 @@ app.use(cookieParser()); // data from cookies
 app.use("/", viewRouter);
 app.use("/api/v1/movies", movieRouter);
 app.use("/api/v1/users", userRouter);
+
+// Handling unknown routes ––– must be at the end of all routes
+app.all("*", (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404)); // will skip all other middlewares in the stack and go straight to the next one down below
+});
+
+// Middleware error handling
+app.use(globalErrorHandler);
 
 module.exports = app;

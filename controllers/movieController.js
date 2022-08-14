@@ -1,45 +1,47 @@
 const Movie = require("../models/movieModel");
 const User = require("../models/userModel");
+const catchAsync = require("../utilities/catchAsync");
+const AppError = require("../utilities/appError");
 
-exports.getAllMovies = async (req, res, next) => {
-  try {
-    const movies = await Movie.find({ category: "Movie" }).populate({
-      path: "whoLiked whoBookmarked",
-      select: "-__v",
-    });
+exports.getAllMovies = catchAsync(async (req, res, next) => {
+  const movies = await Movie.find({ category: "Movie" }).populate({
+    path: "whoLiked whoBookmarked",
+    select: "-__v",
+  });
 
-    res.status(200).json({
-      status: "success",
-      results: movies.length,
-      data: {
-        data: movies,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
+  if (!movies)
+    return next(
+      new AppError("No documents were found under 'Movie' category.", 404)
+    );
 
-exports.createMovie = async (req, res, next) => {
-  try {
-    const newMovie = await Movie.create(req.body);
+  res.status(200).json({
+    status: "success",
+    results: movies.length,
+    data: {
+      data: movies,
+    },
+  });
+});
 
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: newMovie,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
+exports.createMovie = catchAsync(async (req, res, next) => {
+  const newMovie = await Movie.create(req.body);
 
-exports.getMovie = async (req, res, next) => {
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: newMovie,
+    },
+  });
+});
+
+exports.getMovie = catchAsync(async (req, res, next) => {
   const movie = await Movie.find({ _id: req.params.id }).populate({
     path: "whoLiked whoBookmarked",
     select: "-__v",
   });
+
+  if (!movie)
+    return next(new AppError("Document with that ID was not found.", 404));
 
   res.status(200).json({
     status: "success",
@@ -47,44 +49,41 @@ exports.getMovie = async (req, res, next) => {
       data: movie,
     },
   });
-};
+});
 
-exports.getAllTVSeries = async (req, res, next) => {
-  try {
-    const tvSeries = await Movie.find({
-      // '$options: i' field is neccessary because we need to specify case insensiity
-      category: { $regex: "tv s", $options: "i" },
-    });
+exports.getAllTVSeries = catchAsync(async (req, res, next) => {
+  const tvSeries = await Movie.find({
+    // '$options: i' field is neccessary because we need to specify case insensiity
+    category: { $regex: "tv s", $options: "i" },
+  });
 
-    res.status(200).json({
-      status: "success",
-      results: tvSeries.length,
-      data: {
-        data: tvSeries,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
+  if (!tvSeries) return next(new AppError("No TV Series were found.", 404));
 
-exports.getTrending = async (req, res, next) => {
-  try {
-    const trendings = await Movie.find({ isTrending: true });
+  res.status(200).json({
+    status: "success",
+    results: tvSeries.length,
+    data: {
+      data: tvSeries,
+    },
+  });
+});
 
-    res.status(200).json({
-      status: "success",
-      results: trendings.length,
-      data: {
-        data: trendings,
-      },
-    });
-  } catch (err) {
-    console.error(err);
-  }
-};
+exports.getTrending = catchAsync(async (req, res, next) => {
+  const trendings = await Movie.find({ isTrending: true });
 
-exports.likeMovie = async function (req, res, next) {
+  if (!trendings)
+    return next(new AppError("No trending movies were found.", 404));
+
+  res.status(200).json({
+    status: "success",
+    results: trendings.length,
+    data: {
+      data: trendings,
+    },
+  });
+});
+
+exports.likeMovie = catchAsync(async function (req, res, next) {
   const isInArray = req.user.liked.some((movie) => {
     return movie.equals(req.params.id);
   });
@@ -128,9 +127,9 @@ exports.likeMovie = async function (req, res, next) {
       status: "success",
     });
   }
-};
+});
 
-exports.bookmarkMovie = async function (req, res, next) {
+exports.bookmarkMovie = catchAsync(async function (req, res, next) {
   const isInArray = req.user.bookmarked.some((movie) => {
     return movie.equals(req.params.id);
   });
@@ -173,10 +172,13 @@ exports.bookmarkMovie = async function (req, res, next) {
       status: "success",
     });
   }
-};
+});
 
 exports.getBookmarked = function (req, res, next) {
   const bookmarkedMovies = req.user.bookmarked;
+
+  if (bookmarkedMovies.length === 0)
+    return next(new AppError("You did not bookmark any movies yet.", 404));
 
   res.status(200).json({
     status: "success",
@@ -188,6 +190,9 @@ exports.getBookmarked = function (req, res, next) {
 
 exports.getLiked = (req, res, next) => {
   const likedMovies = req.user.liked;
+
+  if (likedMovies.length === 0)
+    return next(new AppError("You did not like any movies yet.", 404));
 
   res.status(200).json({
     status: "success",

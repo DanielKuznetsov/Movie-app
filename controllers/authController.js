@@ -1,5 +1,7 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+const catchAsync = require("../utilities/catchAsync");
+const AppError = require("../utilities/appError");
 const { promisify } = require("util");
 
 const signToken = (id) => {
@@ -32,7 +34,7 @@ const createSendToken = (user, statusCode, res) => {
   });
 };
 
-exports.login = async function (req, res, next) {
+exports.login = catchAsync(async function (req, res, next) {
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -42,15 +44,23 @@ exports.login = async function (req, res, next) {
   const user = await User.findOne({ email }).select("+password");
 
   if (!user || !(await user.comparePasswords(password, user.password))) {
-    throw new Error("Incorrect email or password");
+    // throw new Error("Incorrect email or password");
+    // console.error("Incorrect email or password");
+    return next(new AppError("Incorrect email or password"), 401);
   }
 
   createSendToken(user, 200, res);
-};
+});
 
-exports.signup = async function (req, res, next) {
+exports.signup = catchAsync(async function (req, res, next) {
   const userExist = await User.findOne({ email: req.body.email });
-  if (userExist) return next();
+  if (userExist)
+    return next(
+      new AppError(
+        "User with this email already exists. Please choose a different email!",
+        404
+      )
+    );
 
   const newUser = await User.create({
     firstName: req.body.firstName,
@@ -61,9 +71,9 @@ exports.signup = async function (req, res, next) {
   });
 
   createSendToken(newUser, 201, res);
-};
+});
 
-exports.protect = async (req, res, next) => {
+exports.protect = catchAsync(async (req, res, next) => {
   // 1) Getting the token and check if it exists
   let token;
 
@@ -98,7 +108,7 @@ exports.protect = async (req, res, next) => {
   res.locals.user = freshUser;
   req.user = freshUser;
   next();
-};
+});
 
 exports.logout = (req, res) => {
   res.cookie("jwt", "loggedout", {
@@ -130,6 +140,7 @@ exports.isLoggedIn = async (req, res, next) => {
       // THERE IS A LOGGED IN USER
       res.locals.user = freshUser; // this will allow that each PUG template will have access to this variable
       req.user = freshUser;
+
       return next();
     } catch (err) {
       return next();
