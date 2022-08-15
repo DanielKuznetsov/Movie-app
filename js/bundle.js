@@ -4549,7 +4549,7 @@ module.exports = require('./lib/axios');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logout = exports.login = void 0;
+exports.signup = exports.logout = exports.login = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -4659,13 +4659,66 @@ var logout = /*#__PURE__*/function () {
 }();
 
 exports.logout = logout;
+
+var signup = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(firstName, lastName, email, password, passwordConfirm) {
+    var result;
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.prev = 0;
+            _context3.next = 3;
+            return (0, _axios.default)({
+              method: "POST",
+              url: "/api/v1/users/signUp",
+              data: {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+                passwordConfirm: passwordConfirm
+              }
+            });
+
+          case 3:
+            result = _context3.sent;
+
+            if (result.data.status === "success") {
+              console.log("SUCCESS");
+              window.location.href = "http://localhost:4000/";
+            }
+
+            _context3.next = 10;
+            break;
+
+          case 7:
+            _context3.prev = 7;
+            _context3.t0 = _context3["catch"](0);
+            console.log(_context3.t0.message);
+
+          case 10:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3, null, [[0, 7]]);
+  }));
+
+  return function signup(_x3, _x4, _x5, _x6, _x7) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+
+exports.signup = signup;
 },{"axios":"../node_modules/axios/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _login = require("/login.js");
 
-var loginForm = document.querySelector("#form");
+var loginForm = document.querySelector("#form-login");
 var logoutBtn = document.querySelector(".logout-btn");
+var signupForm = document.querySelector("#form-signup");
 if (loginForm) loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   var email = document.querySelector("#email").value;
@@ -4675,6 +4728,15 @@ if (loginForm) loginForm.addEventListener("submit", function (e) {
   document.querySelector("#password").value = "";
 });
 if (logoutBtn) logoutBtn.addEventListener("click", _login.logout);
+if (signupForm) signupForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var firstName = document.querySelector("#f-name").value;
+  var lastName = document.querySelector("#l-name").value;
+  var email = document.querySelector("#email").value;
+  var password = document.querySelector("#password").value;
+  var passwordConfirm = document.querySelector("#passwordConfirm").value;
+  (0, _login.signup)(firstName, lastName, email, password, passwordConfirm);
+});
 },{"/login.js":"login.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

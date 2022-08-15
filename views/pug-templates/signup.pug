@@ -11,12 +11,16 @@ html(lang='en')
     .container-log
       img.logo(src='/starter-code/assets/logo.svg', alt='Logo')
       .form
-        form#form.form__wrapper
+        form#form-signup.form__wrapper
           span.form__title Sign up
+          input#f-name.form__input(type='text', placeholder='Daniel')
+          input#l-name.form__input(type='text', placeholder='Kuznetsov')
           input#email.form__input(type='text', placeholder='example@gmail.com')
           input#password.form__input(type='password', placeholder='Password')
           input#passwordConfirm.form__input(type='password', placeholder='Repeat  password')
           button#form-btn.form__submit Create an account
         span.form__footer
           | Already have an account? 
-          a.form__link(href='/') Login
+          a.form__link(href='/login') Login
+
+    script(src="/js/bundle.js")

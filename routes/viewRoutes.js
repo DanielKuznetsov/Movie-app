@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get("/", authController.protect, viewController.getHomepage);
 router.get("/login", viewController.getLoginPage);
-// router.get("/home", authController.isLoggedIn, viewController.getHomepage);
+router.get("/signup", viewController.getSignupPage);
 
 module.exports = router;

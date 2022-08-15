@@ -40,3 +40,33 @@ export const logout = async () => {
     console.log(err.message);
   }
 };
+
+export const signup = async (
+  firstName,
+  lastName,
+  email,
+  password,
+  passwordConfirm
+) => {
+  try {
+    const result = await axios({
+      method: "POST",
+      url: "/api/v1/users/signUp",
+      data: {
+        firstName,
+        lastName,
+        email,
+        password,
+        passwordConfirm,
+      },
+    });
+
+    if (result.data.status === "success") {
+      console.log("SUCCESS");
+
+      window.location.href = "http://localhost:4000/";
+    }
+  } catch (err) {
+    console.log(err.message);
+  }
+};
