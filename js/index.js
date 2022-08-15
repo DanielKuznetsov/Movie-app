@@ -1,4 +1,4 @@
-import { login, logout, signup } from "/login.js";
+import { login, logout, signup } from "/auth.js";
 
 const loginForm = document.querySelector("#form-login");
 const logoutBtn = document.querySelector(".logout-btn");
@@ -30,4 +30,6 @@ if (signupForm)
     const passwordConfirm = document.querySelector("#passwordConfirm").value;
 
     signup(firstName, lastName, email, password, passwordConfirm);
+
+    firstName = lastName = email = password = passwordConfirm = "";
   });

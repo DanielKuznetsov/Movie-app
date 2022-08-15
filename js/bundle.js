@@ -4543,7 +4543,7 @@ module.exports.default = axios;
 
 },{"./utils":"../node_modules/axios/lib/utils.js","./helpers/bind":"../node_modules/axios/lib/helpers/bind.js","./core/Axios":"../node_modules/axios/lib/core/Axios.js","./core/mergeConfig":"../node_modules/axios/lib/core/mergeConfig.js","./defaults":"../node_modules/axios/lib/defaults/index.js","./cancel/CanceledError":"../node_modules/axios/lib/cancel/CanceledError.js","./cancel/CancelToken":"../node_modules/axios/lib/cancel/CancelToken.js","./cancel/isCancel":"../node_modules/axios/lib/cancel/isCancel.js","./env/data":"../node_modules/axios/lib/env/data.js","./helpers/toFormData":"../node_modules/axios/lib/helpers/toFormData.js","../lib/core/AxiosError":"../node_modules/axios/lib/core/AxiosError.js","./helpers/spread":"../node_modules/axios/lib/helpers/spread.js","./helpers/isAxiosError":"../node_modules/axios/lib/helpers/isAxiosError.js"}],"../node_modules/axios/index.js":[function(require,module,exports) {
 module.exports = require('./lib/axios');
-},{"./lib/axios":"../node_modules/axios/lib/axios.js"}],"login.js":[function(require,module,exports) {
+},{"./lib/axios":"../node_modules/axios/lib/axios.js"}],"auth.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -4714,7 +4714,9 @@ exports.signup = signup;
 },{"axios":"../node_modules/axios/index.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
-var _login = require("/login.js");
+var _auth = require("/auth.js");
+
+function _readOnlyError(name) { throw new TypeError("\"" + name + "\" is read-only"); }
 
 var loginForm = document.querySelector("#form-login");
 var logoutBtn = document.querySelector(".logout-btn");
@@ -4723,11 +4725,11 @@ if (loginForm) loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   var email = document.querySelector("#email").value;
   var password = document.querySelector("#password").value;
-  (0, _login.login)(email, password);
+  (0, _auth.login)(email, password);
   document.querySelector("#email").value = "";
   document.querySelector("#password").value = "";
 });
-if (logoutBtn) logoutBtn.addEventListener("click", _login.logout);
+if (logoutBtn) logoutBtn.addEventListener("click", _auth.logout);
 if (signupForm) signupForm.addEventListener("submit", function (e) {
   e.preventDefault();
   var firstName = document.querySelector("#f-name").value;
@@ -4735,9 +4737,10 @@ if (signupForm) signupForm.addEventListener("submit", function (e) {
   var email = document.querySelector("#email").value;
   var password = document.querySelector("#password").value;
   var passwordConfirm = document.querySelector("#passwordConfirm").value;
-  (0, _login.signup)(firstName, lastName, email, password, passwordConfirm);
+  (0, _auth.signup)(firstName, lastName, email, password, passwordConfirm);
+  lastName = (password = ("", _readOnlyError("passwordConfirm")), _readOnlyError("email")), _readOnlyError("firstName");
 });
-},{"/login.js":"login.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"/auth.js":"auth.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
