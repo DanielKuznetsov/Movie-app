@@ -5,13 +5,16 @@ exports.getHomepage = async function (req, res, next) {
 
   const bookmarkIDs = [];
   req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
-  // console.log(bookmarkIDs);
+
+  const likedIDs = [];
+  req.user.liked.forEach((el) => likedIDs.push(el._id.valueOf()));
 
   res.status(200).render("base", {
     title: "Home Page",
     trendings,
     user: req.user,
     bookmarkIDs,
+    likedIDs,
   });
 };
 
@@ -36,10 +39,14 @@ exports.getMoviesPage = async function (req, res, next) {
   const bookmarkIDs = [];
   req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
 
+  const likedIDs = [];
+  req.user.liked.forEach((el) => likedIDs.push(el._id.valueOf()));
+
   res.status(200).render("movies", {
     title: "All Movies Page",
     movies,
     bookmarkIDs,
+    likedIDs,
   });
 };
 
@@ -52,10 +59,14 @@ exports.getTVPage = async function (req, res, next) {
   const bookmarkIDs = [];
   req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
 
+  const likedIDs = [];
+  req.user.liked.forEach((el) => likedIDs.push(el._id.valueOf()));
+
   res.status(200).render("tv", {
     title: "TV Series Page",
     allTVSeries,
     bookmarkIDs,
+    likedIDs,
   });
 };
 
@@ -66,11 +77,15 @@ exports.getBookmarkedPage = function (req, res, next) {
   const bookmarkIDs = [];
   req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
 
+  const likedIDs = [];
+  req.user.liked.forEach((el) => likedIDs.push(el._id.valueOf()));
+
   res.status(200).render("bookmarked", {
     title: "Bookmarked Page",
     tvs,
     movies,
     bookmarkIDs,
+    likedIDs,
   });
 };
 

@@ -42,6 +42,15 @@ html
                       svg(width='12', height='14', xmlns='http://www.w3.org/2000/svg')
                         path#bookmarkSVG(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='none')
                   
+                  button.like-btn(data-id=`${trend._id}`)
+                    if likedIDs.includes(`${trend._id}`)
+                      svg(width="15" height="20" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512")
+                        path#likedSVG(d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" stroke="#FFF" stroke-width="20" fill="#fff")
+                    else 
+                      svg(width="15" height="20" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512")
+                        path#likedSVG(d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" stroke="#FFF" stroke-width="20" fill="none")
+
+
                   .card__info
                     .info
                       span.year= trend.year
@@ -53,7 +62,6 @@ html
                       span.dot &bull;
                       span.rating= trend.rating
                     span.movie-title= trend.title
-                    //- button to like a movie
           
           main.general
             - const likedMovies = user.liked;
@@ -70,9 +78,24 @@ html
                         span Play
                     img.card__image(src=`/starter-code/assets/thumbnails/${movie.title.split(" ").join('-')}/regular/large.jpg`, alt='')
                     // WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS
-                    button.bookmark-btn
-                      svg(width='12', height='14', xmlns='http://www.w3.org/2000/svg')
-                        path(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='none')
+                    button.bookmark-btn(data-id=`${movie._id}`)
+                      if bookmarkIDs.includes(`${movie._id}`)
+                        svg(width="12" height="14" xmlns="http://www.w3.org/2000/svg")
+                          path#bookmarkSVG(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='#FFF')
+                      else 
+                        svg(width='12', height='14', xmlns='http://www.w3.org/2000/svg')
+                          path#bookmarkSVG(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='none')
+
+                    button.like-btn(data-id=`${movie._id}`)
+                      if likedIDs.includes(`${movie._id}`)
+                        svg(width="15" height="20" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512")
+                          path#likedSVG(d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" stroke="#FFF" stroke-width="20" fill="#fff")
+                      else 
+                        svg(width="15" height="20" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512")
+                          path#likedSVG(d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z" stroke="#FFF" stroke-width="20" fill="none")
+
+
+
                     .card__info
                       .info
                         span.year= movie.year

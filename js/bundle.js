@@ -4747,7 +4747,8 @@ var bookmark = /*#__PURE__*/function () {
           case 2:
             result = _context.sent;
 
-            if (result.data.status === "success") {// console.log("SUCCESS");
+            if (result.data.status === "success") {
+              console.log("SUCCESS");
             }
 
           case 4:
@@ -4777,6 +4778,7 @@ var loginForm = document.querySelector("#form-login");
 var logoutBtn = document.querySelector(".logout-btn");
 var signupForm = document.querySelector("#form-signup");
 var bookmarkBtns = document.querySelectorAll(".bookmark-btn");
+var likeBtns = document.querySelectorAll(".like-btn");
 if (loginForm) loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   var email = document.querySelector("#email").value;
@@ -4801,9 +4803,7 @@ if (bookmarkBtns) {
   bookmarkBtns.forEach(function (el, index) {
     el.addEventListener("click", function (e) {
       console.log("Clicked on: ".concat(el.dataset.id));
-      var bID = document.querySelectorAll("#bookmarkSVG")[index]; // bID.style.fill = "red";
-      // console.log(index);
-
+      var bID = document.querySelectorAll("#bookmarkSVG")[index];
       var fill = bID.getAttribute("fill");
       console.log(fill);
 
@@ -4814,6 +4814,25 @@ if (bookmarkBtns) {
       }
 
       (0, _operations.bookmark)(el.dataset.id, "bookmark");
+    });
+  });
+}
+
+if (likeBtns) {
+  likeBtns.forEach(function (el, index) {
+    el.addEventListener("click", function (e) {
+      console.log("Clicked on: ".concat(el.dataset.id));
+      var bID = document.querySelectorAll("#likedSVG")[index];
+      var fill = bID.getAttribute("fill");
+      console.log(fill);
+
+      if (fill === "none") {
+        bID.setAttribute("fill", "#FFF");
+      } else {
+        bID.setAttribute("fill", "none");
+      }
+
+      (0, _operations.bookmark)(el.dataset.id, "like");
     });
   });
 }
@@ -4845,7 +4864,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63977" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58738" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

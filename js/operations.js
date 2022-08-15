@@ -7,6 +7,6 @@ export const bookmark = async (id, action) => {
   });
 
   if (result.data.status === "success") {
-    // console.log("SUCCESS");
+    console.log("SUCCESS");
   }
 };
