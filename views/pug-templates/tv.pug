@@ -14,9 +14,13 @@ block content
                 span Play
             img.card__image(src=`/starter-code/assets/thumbnails/${series.title.split(" ").join('-')}/regular/large.jpg`, alt='')
             // WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS
-            button.bookmark-btn
-              svg(width='12', height='14', xmlns='http://www.w3.org/2000/svg')
-                path(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='none')
+            button.bookmark-btn(data-id=`${series._id}`)
+              if bookmarkIDs.includes(`${series._id}`)
+                svg(width="12" height="14" xmlns="http://www.w3.org/2000/svg")
+                  path#bookmarkSVG(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='#FFF')
+              else 
+                svg(width='12', height='14', xmlns='http://www.w3.org/2000/svg')
+                  path#bookmarkSVG(d='m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z', stroke='#FFF', stroke-width='1.5', fill='none')
             .card__info
               .info
                 span.year= series.year

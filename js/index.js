@@ -1,8 +1,11 @@
 import { login, logout, signup } from "/auth.js";
+import { bookmark } from "/operations";
 
 const loginForm = document.querySelector("#form-login");
 const logoutBtn = document.querySelector(".logout-btn");
 const signupForm = document.querySelector("#form-signup");
+
+const bookmarkBtns = document.querySelectorAll(".bookmark-btn");
 
 if (loginForm)
   loginForm.addEventListener("submit", function (e) {
@@ -33,3 +36,26 @@ if (signupForm)
 
     firstName = lastName = email = password = passwordConfirm = "";
   });
+
+if (bookmarkBtns) {
+  bookmarkBtns.forEach((el, index) => {
+    el.addEventListener("click", (e) => {
+      console.log(`Clicked on: ${el.dataset.id}`);
+
+      const bID = document.querySelectorAll("#bookmarkSVG")[index];
+      // bID.style.fill = "red";
+      // console.log(index);
+
+      const fill = bID.getAttribute("fill");
+      console.log(fill);
+
+      if (fill === "none") {
+        bID.setAttribute("fill", "#FFF");
+      } else {
+        bID.setAttribute("fill", "none");
+      }
+
+      bookmark(el.dataset.id, "bookmark");
+    });
+  });
+}

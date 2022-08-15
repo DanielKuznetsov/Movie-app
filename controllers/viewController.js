@@ -3,10 +3,15 @@ const Movie = require("../models/movieModel");
 exports.getHomepage = async function (req, res, next) {
   const trendings = await Movie.find({ isTrending: true });
 
+  const bookmarkIDs = [];
+  req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
+  // console.log(bookmarkIDs);
+
   res.status(200).render("base", {
     title: "Home Page",
     trendings,
     user: req.user,
+    bookmarkIDs,
   });
 };
 
@@ -28,9 +33,13 @@ exports.getMoviesPage = async function (req, res, next) {
     select: "-__v",
   });
 
+  const bookmarkIDs = [];
+  req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
+
   res.status(200).render("movies", {
     title: "All Movies Page",
     movies,
+    bookmarkIDs,
   });
 };
 
@@ -40,9 +49,13 @@ exports.getTVPage = async function (req, res, next) {
     category: { $regex: "tv s", $options: "i" },
   });
 
+  const bookmarkIDs = [];
+  req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
+
   res.status(200).render("tv", {
     title: "TV Series Page",
     allTVSeries,
+    bookmarkIDs,
   });
 };
 
@@ -50,9 +63,15 @@ exports.getBookmarkedPage = function (req, res, next) {
   const tvs = req.user.bookmarked.filter((el) => el.category === "TV Series");
   const movies = req.user.bookmarked.filter((el) => el.category === "Movie");
 
+  const bookmarkIDs = [];
+  req.user.bookmarked.forEach((el) => bookmarkIDs.push(el._id.valueOf()));
+
   res.status(200).render("bookmarked", {
     title: "Bookmarked Page",
     tvs,
     movies,
+    bookmarkIDs,
   });
 };
+
+exports.bookmarkMovie = async function (req, res, next) {};
