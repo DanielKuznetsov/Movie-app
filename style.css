@@ -66,6 +66,12 @@ body {
   align-items: center;
   justify-content: center; }
 
+.logout-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
 .overlay {
   position: absolute;
   top: 0;
