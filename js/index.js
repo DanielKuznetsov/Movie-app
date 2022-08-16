@@ -70,7 +70,7 @@ if (likeBtns) {
       console.log(fill);
 
       if (fill === "none") {
-        bID.setAttribute("fill", "#FFF");
+        bID.setAttribute("fill", "#ffc0cb");
       } else {
         bID.setAttribute("fill", "none");
       }

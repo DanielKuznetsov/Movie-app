@@ -4747,8 +4747,9 @@ var bookmark = /*#__PURE__*/function () {
           case 2:
             result = _context.sent;
 
-            if (result.data.status === "success") {
+            if (result.data.status === "success" || result.data.status === "success!") {
               console.log("SUCCESS");
+              window.location.reload();
             }
 
           case 4:
@@ -4827,7 +4828,7 @@ if (likeBtns) {
       console.log(fill);
 
       if (fill === "none") {
-        bID.setAttribute("fill", "#FFF");
+        bID.setAttribute("fill", "#ffc0cb");
       } else {
         bID.setAttribute("fill", "none");
       }

@@ -197,7 +197,8 @@ body {
   display: flex;
   gap: 2.5rem; }
   .container-home .content-wrapper {
-    flex: 1; }
+    flex: 1;
+    overflow: hidden; }
 
 .home__nav {
   height: 50rem;
@@ -269,34 +270,37 @@ body {
               TRENDING MOVIE CARD
 ================================================
 */
-.trending__cards-wrapper {
-  overflow: scroll;
-  display: flex;
-  gap: 2.5rem; }
-.trending .card {
-  position: relative;
-  width: 35rem;
-  height: 17rem;
-  background-color: #5a698f;
-  border-radius: 0.75rem; }
-  .trending .card:hover .overlay {
-    background-color: rgba(0, 0, 0, 0.4); }
-    .trending .card:hover .overlay .play-btn {
-      opacity: 1;
-      pointer-events: all; }
-  .trending .card__image {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.75rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0; }
-  .trending .card__info {
-    position: absolute;
-    bottom: 1.25rem;
-    left: 1.75rem;
-    z-index: 10; }
+.trending {
+  overflow: scroll; }
+  .trending__cards-wrapper {
+    width: calc(5 * 35rem);
+    overflow: scroll;
+    display: flex;
+    gap: 2.5rem; }
+  .trending .card {
+    position: relative;
+    width: 35rem;
+    height: 17rem;
+    background-color: #5a698f;
+    border-radius: 0.75rem; }
+    .trending .card:hover .overlay {
+      background-color: rgba(0, 0, 0, 0.4); }
+      .trending .card:hover .overlay .play-btn {
+        opacity: 1;
+        pointer-events: all; }
+    .trending .card__image {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.75rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0; }
+    .trending .card__info {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.75rem;
+      z-index: 10; }
 
 /*
 ================================================
@@ -331,5 +335,85 @@ body {
       bottom: -5.25rem;
       left: 0;
       z-index: 10; }
+
+/*
+================================================
+                  MEDIA QUERIES
+================================================
+*/
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 1024px) {
+  .container-home {
+    flex-direction: column;
+    overflow: scroll; }
+
+  .logo {
+    width: 2.85rem;
+    height: 2.85rem; }
+
+  .home__nav {
+    height: auto;
+    flex-direction: row;
+    padding: 1rem; }
+    .home__nav-list {
+      flex-direction: row;
+      gap: 2rem; }
+    .home__nav-item .logo {
+      margin-bottom: 0; }
+    .home__nav-item .nav--icon {
+      width: 2.2rem;
+      height: 2.2rem; }
+
+  .trending {
+    overflow: scroll; }
+    .trending .card {
+      width: 30rem;
+      height: 15rem; }
+    .trending .card__info {
+      bottom: 0.8rem;
+      left: 1.35rem; }
+
+  .info,
+  .span-category {
+    gap: 0.5rem; }
+
+  .year,
+  .category,
+  .rating {
+    font-size: 1.15rem; }
+
+  .dot {
+    font-size: 0.8rem; }
+
+  .movie-title {
+    font-size: 1.6rem; }
+
+  .overlay .play-btn {
+    gap: 0.75rem;
+    width: 7.5rem; }
+    .overlay .play-btn img {
+      width: 2rem;
+      height: 2rem; }
+    .overlay .play-btn span {
+      font-size: 1.3rem; }
+
+  .bookmark-btn,
+  .like-btn {
+    top: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem; }
+
+  .bookmark-btn {
+    right: 1.25rem; }
+
+  .like-btn {
+    right: 4.8rem; }
+
+  .trending__cards-wrapper {
+    width: calc(5 * 30rem); }
+
+  .general .cards-wrapper .card {
+    width: 21.65rem;
+    height: 12.5rem; } }
 
 /*# sourceMappingURL=style.css.map */

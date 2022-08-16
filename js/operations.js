@@ -6,7 +6,9 @@ export const bookmark = async (id, action) => {
     url: `/api/v1/movies/${action}/${id}`,
   });
 
-  if (result.data.status === "success") {
+  if (result.data.status === "success" || result.data.status === "success!") {
     console.log("SUCCESS");
+
+    window.location.reload();
   }
 };

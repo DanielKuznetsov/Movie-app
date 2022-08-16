@@ -4,7 +4,7 @@
   "description": "Movie App Project! (practice)",
   "main": "app.js",
   "scripts": {
-    "start:dev": "npx nodemon server.js",
+    "watch": "npx nodemon server.js",
     "watch:js": "parcel watch ./js/index.js --out-dir ./js --out-file bundle.js"
   },
   "repository": {
