@@ -146,7 +146,7 @@ body {
 .category,
 .rating {
   font-weight: 200;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: rgba($color-white, 0.7);
 }
 
@@ -157,7 +157,7 @@ body {
 
 .movie-title {
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   z-index: 100;
   color: rgba($color-white, 1);
 }
@@ -421,15 +421,19 @@ body {
 
 .general {
   .cards-wrapper {
-    display: flex;
+    // display: flex;
+    // flex-wrap: wrap;
+
     gap: 2.5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 
     .card {
       position: relative;
       margin-bottom: 7rem;
-      width: 25rem;
-      height: 14.5rem;
+      margin-right: 2.5rem;
+      width: 100%;
+      height: 14rem;
       border-radius: 0.75rem;
 
       &:hover {
@@ -470,11 +474,50 @@ body {
 ================================================
 */
 
+@media only screen and (max-width: 1350px) {
+  .general {
+    .cards-wrapper {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+}
+@media only screen and (max-width: 1170px) {
+  .general {
+    .cards-wrapper {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .general {
+    .cards-wrapper {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+@media only screen and (max-width: 601px) {
+  .general {
+    .cards-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 /* On screens that are 992px or less, set the background color to blue */
 
 @media screen and (max-width: 1024px) {
   body {
     // background-color: blue;
+  }
+
+  .content-title {
+    font-size: 2.7rem;
+  }
+
+  // SEARCH
+
+  .search__input {
+    font-size: 1.4rem;
   }
 
   // NAIGATION
@@ -577,12 +620,145 @@ body {
     width: calc(5 * 30rem);
   }
 
-  // GENERAL CARD
+  // SIGN IN/ SIGN UP
+  .container-log {
+    margin-top: 7rem;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  // SIGN IN/ SIGN UP
+  .container-log {
+    margin-top: 5rem;
+  }
+
+  .container-title {
+    font-size: 2rem;
+  }
+
+  .form {
+    width: 30rem;
+  }
+
+  .content-title {
+    font-size: 2rem;
+  }
+
+  // TRENDING
+  // TRENDING CARD
+  .trending {
+    overflow: scroll;
+
+    &__cards-wrapper {
+      width: calc(5 * 33rem);
+    }
+
+    .card {
+      width: 33rem;
+      height: 15rem;
+    }
+
+    .card__info {
+      bottom: 0.75rem;
+    }
+  }
+
+  .info,
+  .span-category {
+    gap: 0.5rem;
+  }
+
+  .year,
+  .category,
+  .rating {
+    font-size: 1.15rem;
+  }
+
+  .dot {
+    font-size: 0.8rem;
+  }
+
+  .movie-title {
+    font-size: 1.3rem;
+  }
+
+  .overlay .play-btn {
+    width: 7rem;
+    padding: 0.5rem 0;
+
+    img {
+      width: 1.65rem;
+      height: 1.65rem;
+    }
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  .bookmark-btn,
+  .like-btn {
+    top: 1rem;
+  }
+
   .general {
     .cards-wrapper {
       .card {
-        width: 21.65rem;
-        height: 12.5rem;
+        height: 12rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .content-title {
+    font-size: 1.3rem;
+  }
+  .form {
+    width: 25rem;
+    padding: 2.25rem;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__input::placeholder {
+      font-size: 1.2rem;
+    }
+
+    &__submit {
+      margin-top: 2rem;
+      padding: 0.5rem;
+    }
+  }
+
+  .info,
+  .span-category {
+    gap: 0.5rem;
+  }
+
+  .year,
+  .category,
+  .rating {
+    font-size: 0.8rem;
+  }
+
+  .dot {
+    font-size: 0.8rem;
+  }
+
+  .movie-title {
+    font-size: 1rem;
+  }
+
+  .general {
+    .cards-wrapper {
+      .card {
+        margin-bottom: 4rem;
+        height: 10rem;
+      }
+      .card__info {
+        bottom: -4.5rem;
       }
     }
   }
