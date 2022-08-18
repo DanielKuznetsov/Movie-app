@@ -4,7 +4,7 @@ const catchAsync = require("../utilities/catchAsync");
 const AppError = require("../utilities/appError");
 
 exports.getAllMovies = catchAsync(async (req, res, next) => {
-  const movies = await Movie.find({ category: "Movie" }).populate({
+  let movies = await Movie.find({ category: "Movie" }).populate({
     path: "whoLiked whoBookmarked",
     select: "-__v",
   });

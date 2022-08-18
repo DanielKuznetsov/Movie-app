@@ -42,8 +42,7 @@ body {
 
 .content-title {
   font-weight: 200;
-  margin-bottom: 2.5rem;
-  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .bookmark-btn {
@@ -223,6 +222,10 @@ body {
     width: 100%;
     padding: 1.25rem;
     cursor: pointer;
+    background-color: #fc4747;
+    outline: none;
+    border: none;
+    color: #fff;
   }
 
   &__footer {
@@ -322,6 +325,8 @@ body {
   display: flex;
   gap: 2rem;
   align-items: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
 
   flex-basis: 96%;
 
@@ -365,6 +370,7 @@ body {
 
 .trending {
   overflow: scroll;
+  margin-bottom: 1.5rem;
 
   &__cards-wrapper {
     width: calc(5 * 35rem);
@@ -619,11 +625,11 @@ body {
   .trending__cards-wrapper {
     width: calc(5 * 30rem);
   }
+}
 
-  // SIGN IN/ SIGN UP
-  .container-log {
-    margin-top: 7rem;
-  }
+// SIGN IN/ SIGN UP
+.container-log {
+  margin-top: 7rem;
 }
 
 @media screen and (max-width: 675px) {
@@ -650,11 +656,11 @@ body {
     overflow: scroll;
 
     &__cards-wrapper {
-      width: calc(5 * 33rem);
+      width: calc(5 * 25rem);
     }
 
     .card {
-      width: 33rem;
+      width: 25rem;
       height: 15rem;
     }
 

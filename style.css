@@ -29,8 +29,7 @@ body {
 
 .content-title {
   font-weight: 200;
-  margin-bottom: 2.5rem;
-  margin-top: 1.5rem; }
+  margin-bottom: 2rem; }
 
 .bookmark-btn {
   position: absolute;
@@ -172,7 +171,11 @@ body {
     margin-top: 3rem;
     width: 100%;
     padding: 1.25rem;
-    cursor: pointer; }
+    cursor: pointer;
+    background-color: #fc4747;
+    outline: none;
+    border: none;
+    color: #fff; }
   .form__footer {
     text-align: center;
     font-size: 1.2rem;
@@ -241,6 +244,8 @@ body {
   display: flex;
   gap: 2rem;
   align-items: center;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
   flex-basis: 96%; }
   .search__logo {
     cursor: pointer;
@@ -271,7 +276,8 @@ body {
 ================================================
 */
 .trending {
-  overflow: scroll; }
+  overflow: scroll;
+  margin-bottom: 1.5rem; }
   .trending__cards-wrapper {
     width: calc(5 * 35rem);
     overflow: scroll;
@@ -429,10 +435,10 @@ body {
     right: 4.8rem; }
 
   .trending__cards-wrapper {
-    width: calc(5 * 30rem); }
+    width: calc(5 * 30rem); } }
+.container-log {
+  margin-top: 7rem; }
 
-  .container-log {
-    margin-top: 7rem; } }
 @media screen and (max-width: 675px) {
   .container-log {
     margin-top: 5rem; }
@@ -449,9 +455,9 @@ body {
   .trending {
     overflow: scroll; }
     .trending__cards-wrapper {
-      width: calc(5 * 33rem); }
+      width: calc(5 * 25rem); }
     .trending .card {
-      width: 33rem;
+      width: 25rem;
       height: 15rem; }
     .trending .card__info {
       bottom: 0.75rem; }

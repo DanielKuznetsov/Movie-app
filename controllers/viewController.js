@@ -9,13 +9,40 @@ exports.getHomepage = async function (req, res, next) {
   const likedIDs = [];
   req.user.liked.forEach((el) => likedIDs.push(el._id.valueOf()));
 
-  res.status(200).render("base", {
-    title: "Home Page",
-    trendings,
-    user: req.user,
-    bookmarkIDs,
-    likedIDs,
-  });
+  let movies;
+  const query = req.query.search;
+
+  if (req.query.search?.trim().length === 0) {
+    movies = null;
+  } else {
+    movies = await Movie.find({
+      title: { $regex: String(req.query.search), $options: "i" },
+    }).populate({
+      path: "whoLiked whoBookmarked",
+      select: "-__v",
+    });
+  }
+
+  console.log(movies);
+  console.log(req.query);
+
+  if (String(Object.keys(req.query)) === "search") {
+    res.status(200).render("_genSearch", {
+      title: "General Page",
+      movies,
+      query,
+      bookmarkIDs,
+      likedIDs,
+    });
+  } else {
+    res.status(200).render("base", {
+      title: "Home Page",
+      trendings,
+      user: req.user,
+      bookmarkIDs,
+      likedIDs,
+    });
+  }
 };
 
 exports.getLoginPage = function (req, res, next) {
