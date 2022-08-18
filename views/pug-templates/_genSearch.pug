@@ -2,7 +2,7 @@ extend base
 
 block content
   main.general
-    if movies.length > 0
+    if movies && movies.length > 0 
       h1.content-title Searched for movies with a title "#{query}"
       .cards-wrapper
         each movie in movies
@@ -44,4 +44,4 @@ block content
                 span.rating= movie.rating
               span.movie-title= movie.title
     else 
-      h1.content-title There are no bookmarked movies yet
+      h1.content-title There are no movies with a title of "#{query}"

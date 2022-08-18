@@ -28,7 +28,7 @@ exports.getHomepage = async function (req, res, next) {
 
   if (String(Object.keys(req.query)) === "search") {
     res.status(200).render("_genSearch", {
-      title: "General Page",
+      title: "Search Page",
       movies,
       query,
       bookmarkIDs,
