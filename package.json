@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "watch": "npx nodemon server.js",
-    "watch:js": "parcel watch ./js/index.js --out-dir ./js --out-file bundle.js",
-    "build:js": "parcel build ./js/index.js --out-dir ./js --out-file bundle.js"
+    "watch:js": "parcel watch ./js/index.js --out-dir ./dist --out-file bundle.js",
+    "build:js": "parcel build ./js/index.js --out-dir ./dist --out-file bundle.js"
   },
   "repository": {
     "type": "git",
