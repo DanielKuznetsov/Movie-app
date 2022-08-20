@@ -6,21 +6,6 @@ const mongoose = require("mongoose");
 
 dotenv.config({ path: "./config.env" });
 
-// cloudinary.config({
-//   cloud_name: "dfgpplsw7",
-//   api_key: "977596339658681",
-//   api_secret: "IiKEoW7_Mv45pVom-w3Ai3rveMI",
-// });
-
-// const update = async (req, res, next) => {
-//   await Movie.findOneAndUpdate();
-// };
-
-// const image = cloudinary.image(
-//   "./starter-code/assets/thumbnails/1998/large.jpg"
-// );
-// console.log(image);
-
 const DB = process.env.DATABASE.replace(
   `<PASSWORD>`,
   process.env.DATABASE_PASSWORD
