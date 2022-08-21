@@ -15,7 +15,7 @@ export const login = async (email, password) => {
       console.log("SUCCESS");
 
       // After successful login, the app redirects me to the /overview route-page
-      window.location.href = "http://localhost:4000/";
+      window.location.href = "/";
     }
   } catch (err) {
     console.log(err);
@@ -34,7 +34,7 @@ export const logout = async () => {
       // console.log("SUCCESS");
 
       // After successful login, the app redirects me to the /overview route-page
-      window.location.href = "http://localhost:4000/login";
+      window.location.href = "/login";
     }
   } catch (err) {
     console.log(err.message);
@@ -64,7 +64,7 @@ export const signup = async (
     if (result.data.status === "success") {
       console.log("SUCCESS");
 
-      window.location.href = "http://localhost:4000/";
+      window.location.href = "/";
     }
   } catch (err) {
     console.log(err.message);
