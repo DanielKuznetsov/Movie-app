@@ -31,7 +31,7 @@ html
                     .play-btn
                       img(src='/starter-code/assets/icon-play.svg', alt='Overlay play icon')
                       span Play
-                  //- img.card__image(src=`/starter-code/assets/thumbnails/${trend.title.split(" ").join('-')}/trending/large.jpg`, alt='')
+                  img.card__image(src=`/starter-code/assets/thumbnails/${trend.title.split(" ").join('-')}/trending/large.jpg`, alt='')
                   // WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS
                   button.bookmark-btn(data-id=`${trend._id}`)
                     // THIS IS FOR BOOKMARKED FRONT END RENDERING
@@ -76,7 +76,7 @@ html
                       .play-btn
                         img(src='/starter-code/assets/icon-play.svg', alt='Overlay play icon')
                         span Play
-                    //- img.card__image(src=`/starter-code/assets/thumbnails/${movie.title.split(" ").join('-')}/regular/large.jpg`, alt='')
+                    img.card__image(src=`/starter-code/assets/thumbnails/${movie.title.split(" ").join('-')}/regular/large.jpg`, alt='')
                     // WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS
                     button.bookmark-btn(data-id=`${movie._id}`)
                       if bookmarkIDs.includes(`${movie._id}`)
