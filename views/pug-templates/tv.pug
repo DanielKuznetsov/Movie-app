@@ -12,7 +12,7 @@ block content
               .play-btn
                 img(src='/starter-code/assets/icon-play.svg', alt='Overlay play icon')
                 span Play
-            img.card__image(src=`/starter-code/assets/thumbnails/${series.title.split(" ").join('-')}/regular/large.jpg`, alt='')
+            img.card__image(src=`/starter-code/assets/thumbnails/${series.title.split(" ").join('-').toLowerCase()}/regular/large.jpg`, alt='')
             // WILL BE CHANGED TO 'FILL' WHEN CLICKED USING JS
             button.bookmark-btn(data-id=`${series._id}`)
               if bookmarkIDs.includes(`${series._id}`)
