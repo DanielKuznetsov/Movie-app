@@ -1,8 +1,6 @@
 const dotenv = require("dotenv");
 const app = require("./app");
 const mongoose = require("mongoose");
-// const cloudinary = require("cloudinary");
-// const Movie = require("./models/movieModel");
 
 dotenv.config({ path: "./config.env" });
 
